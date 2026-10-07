@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thala 7 | Premium Sneakers</title>
+  <link rel="stylesheet" href="style.css" />
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="nav-logo" onclick="navigateTo('landing')">👟 Thala 7</div>
+    <ul class="nav-menu">
+      <li><a href="javascript:void(0)" onclick="navigateTo('landing')">Home</a></li>
+      <li><a href="javascript:void(0)" onclick="navigateTo('product')">Product</a></li>
+      <li><a href="javascript:void(0)" onclick="navigateTo('cart')">Cart</a></li>
+      <li><a href="javascript:void(0)" onclick="navigateTo('payment')">Checkout</a></li>
+    </ul>
+    <div class="nav-right">
+      <i class="fa-solid fa-magnifying-glass nav-icon" title="Search"></i>
+      <div class="cart-icon-wrapper" onclick="navigateTo('cart')">
+        <i class="fa-solid fa-cart-shopping nav-icon"></i>
+        <span id="navCartCount" class="cart-badge">1</span>
+      </div>
+      <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=80&q=80" alt="Profile" class="profile-pic" />
+    </div>
+  </header>
+
+  <main id="landing-view" class="page-view active">
+    
+    <section class="hero-section">
+      <div class="hero-left">
+        <span class="hero-tag">New Release 2026</span>
+        <h1>Engineered For Speed & Street Precision</h1>
+        <p>Step into pure athletic luxury. Handcrafted soles, ultra-breathable mesh, and unmatched cloud cushioning designed to elevate every stride.</p>
+        <button class="btn btn-primary" onclick="navigateTo('product')">Shop Now</button>
+      </div>
+      <div class="hero-right">
+        <img id="landingHeroImg" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80" alt="Sneaker Hero" />
+      </div>
+    </section>
+
+    <section class="service-overview">
+      <div class="stat-card">
+        <h3>2k+</h3>
+        <p>Reviews</p>
+      </div>
+      <div class="stat-card">
+        <h3>30k+</h3>
+        <p>Customers</p>
+      </div>
+      <div class="stat-card">
+        <h3>4.5/5</h3>
+        <p>Rating</p>
+      </div>
+      <div class="stat-card">
+        <h3>100%</h3>
+        <p>High Quality</p>
+      </div>
+    </section>
+  </main>
+  <main id="product-view" class="page-view">
+    <div class="container product-container">
+      <div class="product-main">
+        <div class="product-left">
+          <div class="main-image-wrapper">
+            <img id="mainProductImg" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80" alt="Main Sneaker Display" />
+          </div>
+        </div>
+        <div class="product-right">
+          <span class="product-category">Men's Athletic Footwear</span>
+          <h1 id="productTitle">Air Zoom Nitro Runner X</h1>
+          <div class="rating-display">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half-stroke"></i>
+            <span>(4.8 / 2,420 customer ratings)</span>
+          </div>
+          <div class="price-container">
+            <span class="current-price">₹<span id="unitPrice">4999</span></span>
+            <span class="old-price">₹7999</span>
+            <span class="sale-badge">Special Sale - 37% OFF</span>
+          </div>
+          <p class="product-desc">
+            Constructed with responsive Zoom-air cushioning, breathable Flyknit upper materials, and high-traction rubber outsoles. Engineered for trail sprints and everyday street lifestyle.
+          </p>
+
+          <div class="quantity-controller">
+            <label>Quantity:</label>
+            <div class="qty-btn-group">
+              <button type="button" onclick="changeQuantity(-1)">-</button>
+              <input type="number" id="productQtyInput" value="1" min="1" readonly />
+              <button type="button" onclick="changeQuantity(1)">+</button>
+            </div>
+          </div>
+
+          <button class="btn btn-primary btn-add-cart" onclick="addProductToCart()">
+            <i class="fa-solid fa-cart-plus"></i> Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <div class="bottom-gallery-section">
+        <h3>Product Gallery</h3>
+        <div class="gallery-scroll-container">
+          <div class="gallery-thumb active" onclick="switchMainImage(this, 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80')">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=200&q=80" alt="Red Sneaker" />
+          </div>
+          <div class="gallery-thumb" onclick="switchMainImage(this, 'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=700&q=80')">
+            <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=200&q=80" alt="Orange Runner" />
+          </div>
+          <div class="gallery-thumb" onclick="switchMainImage(this, 'https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=700&q=80')">
+            <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=200&q=80" alt="Grey Athletic" />
+          </div>
+          <div class="gallery-thumb" onclick="switchMainImage(this, 'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=700&q=80')">
+            <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=200&q=80" alt="Pastel High Top" />
+          </div>
+          <div class="gallery-thumb" onclick="switchMainImage(this, 'https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?auto=format&fit=crop&w=700&q=80')">
+            <img src="https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?auto=format&fit=crop&w=200&q=80" alt="Black Mesh" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <main id="cart-view" class="page-view">
+    <div class="container cart-layout">
+      <div class="cart-left">
+        <h2>Shopping Cart</h2>
+        <table class="cart-table">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Quantity</th>
+              <th>Price</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="cartTableBody">
+          </tbody>
+        </table>
+        <div class="cart-bottom-link">
+          <a href="javascript:void(0)" onclick="navigateTo('landing')">
+            <i class="fa-solid fa-arrow-left"></i> Continue Shopping
+          </a>
+        </div>
+      </div>
+
+      <div class="cart-right">
+        <div class="order-summary-card">
+          <h3>Order Summary</h3>
+          <div class="coupon-box">
+            <input type="text" id="couponInput" placeholder="Enter Coupon Code (TRY: SAVE10)" />
+            <button class="btn btn-primary" onclick="applyCoupon()">Apply Coupon</button>
+          </div>
+          <p id="couponFeedback" class="coupon-feedback"></p>
+
+          <div class="summary-breakdown">
+            <div class="summary-line">
+              <span>Sub Total</span>
+              <span>₹<span id="subTotalDisplay">0</span></span>
+            </div>
+            <div class="summary-line">
+              <span>Taxes (18% GST)</span>
+              <span>₹<span id="taxesDisplay">0</span></span>
+            </div>
+            <div class="summary-line discount-line">
+              <span>Discount</span>
+              <span>- ₹<span id="discountDisplay">0</span></span>
+            </div>
+            <hr />
+            <div class="summary-line total-line">
+              <strong>Total</strong>
+              <strong>₹<span id="totalDisplay">0</span></strong>
+            </div>
+          </div>
+
+          <button class="btn btn-primary full-btn" onclick="navigateTo('payment')">Proceed to Checkout</button>
+
+          <div class="razorpay-badge-wrapper">
+            <p><i class="fa-solid fa-shield-halved"></i> 100% Secure Payments via</p>
+            <div class="razorpay-tag">
+              <span class="rzp-icon">⚡</span> <strong>Razorpay</strong> Secure Checkout
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <main id="payment-view" class="page-view">
+    <div class="container payment-layout">
+      <!-- Left Container -->
+      <div class="payment-left">
+        <h2>Checkout</h2>
+        <div class="form-group">
+          <label for="customerEmail">Email ID</label>
+          <input type="email" id="customerEmail" placeholder="your.name@example.com" required />
+        </div>
+
+        <div class="payment-methods-card">
+          <h4>Select Payment Method</h4>
+          <div class="payment-tabs">
+            <button class="pay-tab-btn active" onclick="switchPayMethod(this, 'card')">
+              <i class="fa-solid fa-credit-card"></i> Cards
+            </button>
+            <button class="pay-tab-btn" onclick="switchPayMethod(this, 'upi')">
+              <i class="fa-solid fa-mobile-screen-button"></i> UPI / QR
+            </button>
+            <button class="pay-tab-btn" onclick="switchPayMethod(this, 'bank')">
+              <i class="fa-solid fa-building-columns"></i> Net Banking
+            </button>
+            <button class="pay-tab-btn" onclick="switchPayMethod(this, 'crypto')">
+              <i class="fa-brands fa-bitcoin"></i> Crypto
+            </button>
+          </div>
+
+          <div id="cardPaymentDetails" class="pay-detail-pane">
+            <div class="form-group">
+              <label>Card Number</label>
+              <input type="text" maxlength="19" placeholder="4111 2222 3333 4444" />
+            </div>
+            <div class="form-row-dual">
+              <div class="form-group">
+                <label>Expiry (MM/YY)</label>
+                <input type="text" maxlength="5" placeholder="12/28" />
+              </div>
+              <div class="form-group">
+                <label>CVV</label>
+                <input type="password" maxlength="4" placeholder="•••" />
+              </div>
+            </div>
+            <div class="form-row-dual">
+              <div class="form-group">
+                <label>Country</label>
+                <input type="text" placeholder="India" />
+              </div>
+              <div class="form-group">
+                <label>Zip Code</label>
+                <input type="text" maxlength="6" placeholder="844508" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cart-bottom-link">
+          <a href="javascript:void(0)" onclick="navigateTo('cart')">
+            <i class="fa-solid fa-arrow-left"></i> Return to Cart
+          </a>
+        </div>
+      </div>
+
+      <div class="payment-right">
+        <div class="order-summary-card">
+          <h3>Order Summary</h3>
+
+          <div class="coupon-box">
+            <input type="text" id="checkoutCouponInput" placeholder="Enter Coupon Code" />
+            <button class="btn btn-primary" onclick="applyCheckoutCoupon()">Apply</button>
+          </div>
+
+          <div class="summary-breakdown">
+            <div class="summary-line">
+              <span>Sub Total</span>
+              <span>₹<span id="checkoutSubTotal">0</span></span>
+            </div>
+            <div class="summary-line">
+              <span>Taxes (18% GST)</span>
+              <span>₹<span id="checkoutTaxes">0</span></span>
+            </div>
+            <div class="summary-line discount-line">
+              <span>Discount</span>
+              <span>- ₹<span id="checkoutDiscount">0</span></span>
+            </div>
+            <hr />
+            <div class="summary-line total-line">
+              <strong>Total</strong>
+              <strong>₹<span id="checkoutTotal">0</span></strong>
+            </div>
+          </div>
+
+          <button class="btn btn-pay-now full-btn" onclick="triggerPayment()">
+            Pay Now ₹<span id="payNowBtnAmount">0</span>
+          </button>
+
+          <div class="razorpay-badge-wrapper">
+            <p><i class="fa-solid fa-shield-halved"></i> Secured with 256-bit encryption</p>
+            <div class="razorpay-tag">
+              <span class="rzp-icon">⚡</span> <strong>Razorpay</strong> Trusted Merchant
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
